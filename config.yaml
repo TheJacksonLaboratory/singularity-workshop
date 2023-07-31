@@ -70,7 +70,6 @@ episodes:
 - 08-circos.md
 - 09-singularity-build-blast-example.md
 - 10-singularity_build_rstudio.md
-- 11-singularity-GPU-demo.md
 
 # Information for Learners
 learners: 

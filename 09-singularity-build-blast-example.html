@@ -78,11 +78,11 @@
   Singularity Workshop
 </div>
 
-<aside class="col-md-12 lesson-progress"><div style="width: 66%" class="percentage">
-    66%
+<aside class="col-md-12 lesson-progress"><div style="width: 74%" class="percentage">
+    74%
   </div>
   <div class="progress ">
-    <div class="progress-bar " role="progressbar" style="width: 66%" aria-valuenow="66" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar " role="progressbar" style="width: 74%" aria-valuenow="74" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
     </div>
   </div>
 </aside><div class="container">
@@ -237,15 +237,6 @@
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
-<div class="accordion accordion-flush" id="accordionFlush13">
-  <div class="accordion-item">
-    <div class="accordion-header" id="flush-heading13">
-        <a href="11-singularity-GPU-demo.html">12. 11-singularity-GPU-demo</a>
-    </div><!--/div.accordion-header-->
-        
-  </div><!--/div.accordion-item-->
-</div><!--/div.accordion-flush-->
-
                 </div>
               </div>
             </div>
@@ -378,7 +369,7 @@ your terminal.</p>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./BLAST.sif</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./blast.sif</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -390,7 +381,7 @@ using the singularity shell command.</p>
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">singularity</span> shell BLAST.sif</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">singularity</span> shell blast.sif</span></code></pre>
 </div>
 <p>Notice the change in prompt from “$” to ”Apptainer&gt;”, this is
 because we are inside the container.</p>
@@ -593,7 +584,7 @@ database.</p>
 <div class="codewrapper sourceCode" id="cb24">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="bu">time</span> singularity exec <span class="at">-B</span> <span class="va">$PWD</span> BLAST.sif blastp <span class="at">-num_threads</span> 2 <span class="at">-db</span> c_elegans <span class="at">-query</span> search_query.fasta <span class="at">-outfmt</span> 6 <span class="at">-out</span> BLASTP_Results.txt <span class="at">-max_target_seqs</span> 1</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="bu">time</span> singularity exec <span class="at">-B</span> <span class="va">$PWD</span> blast.sif blastp <span class="at">-num_threads</span> 2 <span class="at">-db</span> c_elegans <span class="at">-query</span> search_query.fasta <span class="at">-outfmt</span> 6 <span class="at">-out</span> BLASTP_Results.txt <span class="at">-max_target_seqs</span> 1</span></code></pre>
 </div>
 <p>This gives us the following output:</p>
 <div class="codewrapper">

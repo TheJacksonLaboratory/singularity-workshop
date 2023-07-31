@@ -78,11 +78,11 @@
   Singularity Workshop
 </div>
 
-<aside class="col-md-12 lesson-progress"><div style="width: 55%" class="percentage">
-    55%
+<aside class="col-md-12 lesson-progress"><div style="width: 61%" class="percentage">
+    61%
   </div>
   <div class="progress ">
-    <div class="progress-bar " role="progressbar" style="width: 55%" aria-valuenow="55" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar " role="progressbar" style="width: 61%" aria-valuenow="61" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
     </div>
   </div>
 </aside><div class="container">
@@ -232,15 +232,6 @@
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading12">
         <a href="10-singularity_build_rstudio.html">11. 10 singularity build rstudio</a>
-    </div><!--/div.accordion-header-->
-        
-  </div><!--/div.accordion-item-->
-</div><!--/div.accordion-flush-->
-
-<div class="accordion accordion-flush" id="accordionFlush13">
-  <div class="accordion-item">
-    <div class="accordion-header" id="flush-heading13">
-        <a href="11-singularity-GPU-demo.html">12. 11-singularity-GPU-demo</a>
     </div><!--/div.accordion-header-->
         
   </div><!--/div.accordion-item-->
@@ -407,6 +398,28 @@ screen.</strong></p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
+<pre class="output" tabindex="0"><code>INFO:    underlay of /etc/localtime required more than 50 (81) bind mounts
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+        LANGUAGE = (unset),
+        LC_ALL = (unset),
+        LANG = "en_US.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the standard locale ("C").
+Skipping 'SRR10233452_subset_1.fastq.gz' which didn't exist, or couldn't be read
+Skipping 'SRR10233452_subset_2.fastq.gz' which didn't exist, or couldn't be read</code></pre>
+</div>
+<p>Oh no we dont see the files, again.<br>
+We can fix that.</p>
+<div class="codewrapper sourceCode" id="cb15">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">singularity</span> exec <span class="at">-B</span> <span class="va">$PWD</span> fastqc.sif fastqc SRR10233452_subset_1.fastq.gz SRR10233452_subset_2.fastq.gz</span></code></pre>
+</div>
+<p>Worked great.</p>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
 <pre class="output" tabindex="0"><code>perl: warning: Setting locale failed.
 perl: warning: Please check that your locale settings:
 	LANGUAGE = (unset),
@@ -424,10 +437,10 @@ Analysis complete for SRR10233452_subset_2.fastq.gz</code></pre>
 </div>
 <div class="section level3">
 <h3 id="use-ls-with-the-1-flag-to-see-the-files-in-the-directory">Use ls with the 1 flag to see the files in the directory<a class="anchor" aria-label="anchor" href="#use-ls-with-the-1-flag-to-see-the-files-in-the-directory"></a></h3>
-<div class="codewrapper sourceCode" id="cb15">
+<div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ls <span class="at">-1</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-1</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -447,10 +460,10 @@ Analysis complete for SRR10233452_subset_2.fastq.gz</code></pre>
 </div>
 <div class="section level3">
 <h3 id="use-unzip-to-unzip-the-results-for-subset-1-">Use <em>unzip</em> to unzip the results for subset 1.<a class="anchor" aria-label="anchor" href="#use-unzip-to-unzip-the-results-for-subset-1-"></a></h3>
-<div class="codewrapper sourceCode" id="cb17">
+<div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> unzip SRR10233452_subset_1_fastqc.zip</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unzip</span> SRR10233452_subset_1_fastqc.zip</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -479,10 +492,10 @@ Analysis complete for SRR10233452_subset_2.fastq.gz</code></pre>
 </div>
 <div class="section level3">
 <h3 id="use-cat-to-view-the-summary-results">Use <em>cat</em> to view the summary results<a class="anchor" aria-label="anchor" href="#use-cat-to-view-the-summary-results"></a></h3>
-<div class="codewrapper sourceCode" id="cb19">
+<div class="codewrapper sourceCode" id="cb21">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> SRR10233452_subset_1_fastqc/summary.txt</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> SRR10233452_subset_1_fastqc/summary.txt</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -504,10 +517,10 @@ PASS	Adapter Content	SRR10233452_subset_1.fastq.gz
 <h3 id="prep-for-bwa">Prep for BWA<a class="anchor" aria-label="anchor" href="#prep-for-bwa"></a></h3>
 <p>Now we can uncompress the ‘gzipped’ files with gunzip. Use the ‘-c
 option to preserve the origional file’</p>
-<div class="codewrapper sourceCode" id="cb21">
+<div class="codewrapper sourceCode" id="cb23">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gunzip</span> SRR10233452_subset_1.fastq.gz SRR10233452_subset_2.fastq.gz</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gunzip</span> SRR10233452_subset_1.fastq.gz SRR10233452_subset_2.fastq.gz</span></code></pre>
 </div>
 <p>Nothing is printed out.</p>
 <div class="codewrapper">
@@ -516,10 +529,10 @@ option to preserve the origional file’</p>
 <pre class="output" tabindex="0"><code></code></pre>
 </div>
 <p>Can see changes with ‘ls’.</p>
-<div class="codewrapper sourceCode" id="cb23">
+<div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-lF</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-lF</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -537,9 +550,8 @@ option to preserve the origional file’</p>
 -rw-rw-r-- 1 student student        61 Jul 14 12:06 SRR10233452_subset_2.fastq.md5</code></pre>
 </div>
 <div class="section level4">
-<h4 id="results-can-be-downloaded-from-link-below-if-you-do-not-have-sftp">Results can be downloaded from link below if you do not have
-SFTP<a class="anchor" aria-label="anchor" href="#results-can-be-downloaded-from-link-below-if-you-do-not-have-sftp"></a></h4>
-<p>KURT ADD LINKS TO FILES…..</p>
+<h4 id="try-downloading-the-zip-files-with-scp">Try downloading the zip files with <strong>scp</strong>
+<a class="anchor" aria-label="anchor" href="#try-downloading-the-zip-files-with-scp"></a></h4>
 <!-- 
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use. 

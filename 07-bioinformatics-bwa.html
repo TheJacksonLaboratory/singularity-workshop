@@ -78,11 +78,11 @@
   Singularity Workshop
 </div>
 
-<aside class="col-md-12 lesson-progress"><div style="width: 58%" class="percentage">
-    58%
+<aside class="col-md-12 lesson-progress"><div style="width: 64%" class="percentage">
+    64%
   </div>
   <div class="progress ">
-    <div class="progress-bar " role="progressbar" style="width: 58%" aria-valuenow="58" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar " role="progressbar" style="width: 64%" aria-valuenow="64" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
     </div>
   </div>
 </aside><div class="container">
@@ -237,15 +237,6 @@
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
-<div class="accordion accordion-flush" id="accordionFlush13">
-  <div class="accordion-item">
-    <div class="accordion-header" id="flush-heading13">
-        <a href="11-singularity-GPU-demo.html">12. 11-singularity-GPU-demo</a>
-    </div><!--/div.accordion-header-->
-        
-  </div><!--/div.accordion-item-->
-</div><!--/div.accordion-flush-->
-
                 </div>
               </div>
             </div>
@@ -391,7 +382,7 @@
 <div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">singularity</span> exec <span class="at">-B</span> <span class="va">$PWD</span> bwa.sif bwa mem chr20.fna /projects/my-lab/06-bio-qc/SRR10233452_subset_1.fastq /projects/my-lab/06-bio-qc/SRR10233452_subset_1.fastq/SRR10233452_subset_2.fastq <span class="op">&gt;</span> out_bwa.sam <span class="dv">2</span><span class="op">&gt;</span> err_out_bwa.sam</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">singularity</span> exec <span class="at">-B</span> <span class="va">$PWD</span> bwa.sif bwa mem chr20.fna /projects/my-lab/06-bio-qc/SRR10233452_subset_1.fastq /projects/my-lab/06-bio-qc/SRR10233452_subset_2.fastq <span class="op">&gt;</span> out_bwa.sam </span></code></pre>
 </div>
 <p>We get an error as the container can not see the fastq files in the
 other directory</p>
@@ -402,8 +393,8 @@ other directory</p>
 [M::bwa_idx_load_from_disk] read 0 ALT contigs
 [E::main_mem] fail to open file `/projects/my-lab/06-bio-qc/SRR10233452_subset_1.fastq'.</code></pre>
 </div>
-<p>Lets add a bind mount to the command so we can see them. Note: The
-mount location in the container does not need to already exist in the
+<p>Lets add a bind mount to the command so we can see them.<br>
+Note: The mount location in the container does not need to exist in the
 container.</p>
 <div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -413,7 +404,7 @@ container.</p>
 <div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span> <span class="at">-n</span> 5 out_bwa.sam</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span> <span class="at">-n</span> 7 out_bwa.sam</span></code></pre>
 </div>
 </div>
 <div class="section level3">
