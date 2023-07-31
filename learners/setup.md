@@ -12,43 +12,44 @@ FIXME: place any data you want learners to use in `episodes/data` and then use
        a relative link ( [data zip file](data/lesson-data.zip) ) to provide a
        link to it, replacing the example.com link.
 -->
-Download the [data zip file](https://example.com/FIXME) and unzip it to your Desktop
 
-## Software Setup
+Example data include chromosome 20 from the rat genome, a subset of 1000 short reads from Bioproject PRJNA574594 SRR10233452, DeepWeeds data set from AlexOlsen.
 
-::::::::::::::::::::::::::::::::::::::: discussion
+The bacteria genome X .
 
-### Details
+Links
 
-Setup for different systems can be presented in dropdown menus via a `solution`
-tag. They will join to this discussion block, so you can give a general overview
-of the software used in this lesson here and fill out the individual operating
-systems (and potentially add more, e.g. online setup) in the solutions blocks.
+https://github.com/AlexOlsen/DeepWeeds
 
-:::::::::::::::::::::::::::::::::::::::::::::::::::
-
-:::::::::::::::: solution
-
-### Windows
-
-Use PuTTY
-
-:::::::::::::::::::::::::
-
-:::::::::::::::: solution
-
-### MacOS
-
-Use Terminal.app
-
-:::::::::::::::::::::::::
+### Discussion OS systems for attendees
 
 
-:::::::::::::::: solution
 
-### Linux
+### Distribute IP address and passwords
 
-Use Terminal
 
-:::::::::::::::::::::::::
+
+### Accessing the system through ssh
+
+
+```ssh student@<yourIP>```
+
+### Accessing artifacts like images through a new terminal
+
+- open a new terminal 
+
+- edit then issue the following command  
+```scp student@<IPorHost>:<PathToFile>  <LocalFileLocation>```
+
+**Example SCP local machine terminal:**
+
+Issue the scp command with your IP and where you want to put the file. The command below puts it in current working directory with the dot at the end of the command " . ".  
+
+```scp student@34.73.218.236:/home/student/test_scp.txt  . ```
+
+Enter the password.  
+View the file on your local machine.
+```cat test_scp.txt```
+
+- use your local system to view the downloaded file. 
 

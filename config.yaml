@@ -60,6 +60,7 @@ contact: 'kurt.showmaker@jax.org' # FIXME
 # Order of episodes in your lesson
 episodes: 
 - introduction.md
+- 00-introduction.md
 
 # Information for Learners
 learners: 
