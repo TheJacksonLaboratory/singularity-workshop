@@ -15,7 +15,7 @@ exercises: 0
 
 ### Review the remote builder directions 
 
-We will omit Sylabs remote builder and repositories in this tutorial since it requieres an external account creation.
+We will omit Sylabs remote builder and repositories in this tutorial since it requiress an external account creation.
 
 A cloud instance with a few programs (apptainer, nano, wget, unzip,nvidia-smi) are a good alternative to remote builders. 
 
@@ -24,7 +24,7 @@ https://docs.sylabs.io/guides/3.2/user-guide/cloud_library.html
 
 Sylabs also have several YouTube Videos on using Singularity:
 
-The 5 part Singularity Conatainer Workflow Demo is a good place to start. 
+The 5 part Singularity Container Workflow Demo is a good place to start. 
 
 Part 1:  
 https://www.youtube.com/watch?v=nQTMJ9hqKNI&list=PL052H4iYGzyvdZ8VS-omTzj1FKMjdXzfB&index=1  
@@ -109,7 +109,7 @@ Storing signatures
 INFO:    Creating SIF file...
 ```
 
-Lets see what happend.
+Lets see what happened.
 ```bash
 ls -lFa
 ```
@@ -255,7 +255,7 @@ ls -lah  ncbi_dataset/data/*
 
 Lets run some of the bioinformatic tools.
 
-Index the genome, tanscriptome, and proteome cause why not.
+Index the genome, transcriptome, and proteome cause why not.
 
 ```bash
 singularity exec -B $PWD samtools_1.17-2023-06.sif samtools faidx  ncbi_dataset/data/GCF_001719145.1/GCF_001719145.1_ASM171914v1_genomic.fna

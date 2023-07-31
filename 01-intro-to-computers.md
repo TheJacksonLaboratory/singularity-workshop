@@ -36,7 +36,7 @@ A port is a communication endpoint.
 
 
 Why can't I use Docker?
-Docker images are not secure becuase they allow users to gain root access to the compute nodes. Singularity effectively runs as the user running the command, and does not result in elevated access. Also, docker interacts with the slurm job scheduler in a way that causes resource requests and usages to not match up, making it difficult to keep job queueing fair for all users. In that the clusters are multi-user systems, we want to make sure people can work without worry that others are accessing their data or unfairly using up resources.
+Docker images are not secure because they allow users to gain root access to the compute nodes. Singularity effectively runs as the user running the command and does not result in elevated access. Also, docker interacts with the slurm job scheduler in a way that causes resource requests and usages to not match up, making it difficult to keep job queueing fair for all users. In that the clusters are multi-user systems, we want to make sure people can work without worry that others are accessing their data or unfairly using up resources.
 
 ## Important notes on how they relate to singularity 
 

@@ -19,7 +19,7 @@ exercises: 0
 
 **These hands on tutorial are being conducted on a base Centos7 OS VM with the following programs installed.**
 
-- apptainer (incuding the alias singularity)
+- apptainer (including the alias singularity)
 
 - nano 
 
