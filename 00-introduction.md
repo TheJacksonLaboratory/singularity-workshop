@@ -4,19 +4,6 @@ teaching: 10
 exercises: 2
 ---
 
-:::::::::::::::::::::::::::::::::::::: questions 
-
-- What are we going to do today ?
-
-::::::::::::::::::::::::::::::::::::::::::::::::
-
-::::::::::::::::::::::::::::::::::::: objectives
-
-- Explain how to use markdown with The Carpentries Workbench
-- Demonstrate how to include pieces of code, figures, and nested challenge blocks
-
-::::::::::::::::::::::::::::::::::::::::::::::::
-
 ## Introduction
 
 This workshop is designed for a beginner with little to now

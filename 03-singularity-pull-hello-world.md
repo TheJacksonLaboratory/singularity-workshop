@@ -50,29 +50,30 @@ Dockerhub shows how many pulls each container had had as well as Dockerhub provi
 
 Lets take look a some dockerhub docker images sources that we will be using today.  
 
-- staphb  
-```https://hub.docker.com/search?q=staphb&image_filter=open_source```
+- **staphb**  
+``` https://hub.docker.com/search?q=staphb&image_filter=open_source ```  
 
--  biocontainers  
-```https://hub.docker.com/r/biocontainers/biocontainers```
+- **biocontainers**  
+``` https://hub.docker.com/r/biocontainers/biocontainers ```  
 
 
-Now lets look at a non-standard example of a program called Busco that can be used for Phylogenetic analysis as well as assessing genomic data quality (assemblies). 
+Now lets look at a non-standard example of a program called Busco that can be used for Phylogenetic analysis as well as assessing genomic data quality (assemblies).  
 
-The home page:
-```https://busco.ezlab.org/```
+The home page:  
+``` https://busco.ezlab.org/ ```  
 
-The User Guide:
-```https://busco.ezlab.org/busco_userguide.html```
+The User Guide:  
+``` https://busco.ezlab.org/busco_userguide.html ```  
 
-Here we see where to access the docker image and the directions to run it with docker (but not sinuglarity can we get it to work? we will see later).
-```https://busco.ezlab.org/busco_userguide.html#docker-image```
+Here we see where to access the docker image and the directions to run it with docker (but not sinuglarity can we get it to work? we will see later).  
+``` https://busco.ezlab.org/busco_userguide.html#docker-image ```  
 
 
 ### Hello World Example 
 ### Verify R in not on system
 
-Try to start *R* on they command line by typing *R*. 
+Try to start *R* on they command line by typing *R*.  
+
 ```bash
 R --help
 ```
