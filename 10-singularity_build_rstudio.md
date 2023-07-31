@@ -76,7 +76,7 @@ singularity exec --cleanenv rdeseq2.sif rserver --www-port 8787 --auth-none=0 --
 
 Lets load a package that from the container.
 
-```bash
+```R
 library('DESeq2')
 ```
 
@@ -84,20 +84,22 @@ Using the Rstudio file browser look at the R folder that appeared, but nothing i
 
 Lets install something to the user space.
 
-```bash
+```R
 BiocManager::install("EnhancedVolcano")
 ```
 
 Now we see the local user install. 
-
+```R
+.libPaths()
+```
 
 Lets install few fun packages.
-```bash
+```R
 install.packages('knitr', dependencies = TRUE)
 ```
 
 Lets install few fun packages.
-```bash
+```R
 options(repos = c(
   carpentries = "https://carpentries.r-universe.dev/", 
   CRAN = "https://cran.rstudio.com/"
@@ -105,24 +107,29 @@ options(repos = c(
 install.packages("sandpaper", dep = TRUE)
 ```
 
-```bash
+```R
 library('sandpaper')
 sandpaper::create_lesson("~/r-intermediate-penguins")
 ```
 
-```bash
+```R
 sandpaper::serve(quiet = FALSE, host = "0.0.0.0", port = "8789")
 ```
 
-```bash
+```R
  servr::daemon_stop()
  ```
 
+### Knit example
+
+Make new folder called myknit.  
+Make file in folder called myknit.Rmd  
+Copy section of code from the link below and paste into new myknit.Rmd file. 
 
  #https://github.com/sachsmc/knit-git-markr-guide/blob/master/knitr/knit.Rmd
 
 
-```bash
+```R
  ```{r setup, include=FALSE}
 library(stringr)
 library(knitr)
