@@ -1,5 +1,5 @@
 ---
-title: "06 bioinformatics-qc"
+title: "06-bioinformatics-qc"
 teaching: 10
 exercises: 0
 ---

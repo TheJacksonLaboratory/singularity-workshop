@@ -1,5 +1,5 @@
 ---
-title: "01 intro to computers"
+title: "01-intro-to-computers"
 teaching: 30
 exercises: 0
 ---
