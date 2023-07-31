@@ -1,5 +1,5 @@
 ---
-title: "08 circos"
+title: "08-circos"
 teaching: 15
 exercises: 0
 ---
