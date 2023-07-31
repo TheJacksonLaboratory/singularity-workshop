@@ -8,9 +8,9 @@ exercises: 0
 
 Containers can be build from the same sources as pull command library, docker, shub, oras as well as using a binary file as a base.
 
-Today we will focus on one of the most common builds, building a ontop container image from docker.
+Today we will focus on one of the most common builds, building on top a container image from docker.
 
-Builds that do not modify the source image generally can be built with out sudo privlages, this is equivelent to a pull command.
+Builds that do not modify the source image generally can be built with out sudo privileges, this is equivalent to a pull command.
 
 ###  Take away parts of a the build command and definition file \
 - singularity build is used to build images from definition file.  

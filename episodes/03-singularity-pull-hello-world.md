@@ -123,8 +123,9 @@ Storing signatures
 2023/07/31 02:44:11  info unpack layer: sha256:3ccbc1cfa6d1cbc33689c9e7c2ebcafcb0af4f895b38c84363f57417e6fbb7cb
 INFO:    Creating SIF file...
 ```
+
 Note when pulling the image it downloads each layer, storing them in the **cache** and stiches them together in the singularity image file.
-The singularity image is imutable.
+The singularity image is immutable.
 
 ###  Use ls to view the new file
 
@@ -353,7 +354,7 @@ ls /projects/my-lab
 
 We get an error because the container can not see the directory. 
 By default the container only mounts the *home* and current *working* directory.
-If you need to access something outside these directories youll need to use a bind mount (more on this later).  
+If you need to access something outside these directories you’ll need to use a bind mount (more on this later).  
 
 ```output
 ls: cannot access '/projects/my-lab': No such file or directory
@@ -396,7 +397,7 @@ org.opencontainers.image.vendor: Rocker Project
 org.opencontainers.image.version: R-4.2.1
 ```
 
-The Rocker github provided alot of detail about the builds. 
+The Rocker github provided a lot of detail about the builds. 
 
 ### Citations and Notes
 

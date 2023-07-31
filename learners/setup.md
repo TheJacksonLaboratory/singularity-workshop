@@ -16,7 +16,7 @@ Example data include in analyses include:
 
 - The *C. elegans* proteome
 
-- Human proteins transcribed and translated from chromome 1.
+- Human proteins transcribed and translated from chromosome 1.
 
 ### OS systems for attendees
 

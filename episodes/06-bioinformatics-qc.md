@@ -6,7 +6,7 @@ exercises: 0
 
 ### Lets build a container image for something not in dockerhub
 
-### First lests check our data files 
+### First lets check our data files 
 
 ```bash
 cd /projects/my-lab/06-bio-qc
@@ -223,7 +223,7 @@ PASS	Adapter Content	SRR10233452_subset_1.fastq.gz
 
 ### Prep for BWA
 
-Now we can uncompress the 'gzipped' files with gunzip. Use the '-c option to preserve the origional file'
+Now we can uncompress the 'gzipped' files with gunzip. Use the '-c option to preserve the original file'
 
 ```bash
 gunzip SRR10233452_subset_1.fastq.gz SRR10233452_subset_2.fastq.gz

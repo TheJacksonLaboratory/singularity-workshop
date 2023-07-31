@@ -6,7 +6,7 @@ exercises: 0
 
 ### Example for circos 
 
-Make a directroy called circos in your home directory 
+Change directory into the circos directory. 
 
 ```bash
 cd /projects/my-lab/08-circos
