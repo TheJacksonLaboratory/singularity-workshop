@@ -1,5 +1,5 @@
 ---
-title: "10 singularity build rstudio"
+title: "10-singularity-build-rstudio"
 teaching: 35
 exercises: 0
 ---

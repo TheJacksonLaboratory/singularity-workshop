@@ -1,5 +1,5 @@
 ---
-title: "09 singularity build"
+title: "09-singularity-build"
 teaching: 35
 exercises: 0
 ---

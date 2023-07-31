@@ -1,5 +1,5 @@
 ---
-title: "07 bioinformatics bwa"
+title: "07-bioinformatics bwa"
 teaching: 10
 exercises: 0
 ---
