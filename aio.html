@@ -608,36 +608,34 @@ build from source.</p>
 <h3 id="singularity-can-pull-from-5-types-of-uris">Singularity can pull from 5 types of URIs<a class="anchor" aria-label="anchor" href="#singularity-can-pull-from-5-types-of-uris"></a>
 </h3>
 <ul>
-<li>
-<strong>library</strong> : Pull an image from the currently
-configured library. See here for configuring a libary.<br>
+<li><p><strong>library</strong> : Pull an image from the currently
+configured library. See here for configuring a libary.<br><code>library://user/collection/container:tag</code></p></li>
+<li><p><strong>docker</strong> : Pull a Docker/OCI image from Docker
+Hub, or another OCI registry. OCI stands for open container
+registry.<br><code>docker://user/image:tag</code></p></li>
+<li><p><strong>shub</strong> : Pull an image from Singularity Hub<br><code>shub://user/image:tag</code></p></li>
+<li><p><strong>oras</strong> : Pull a SIF image from an OCI registry
+that supports ORAS. GCP artifcact registry supports.<br><code>oras://registry/namespace/image:tag</code></p></li>
+<li><p><strong>http, https</strong> : Pull an image using the http(s?)
+protocol<br><code>https://library.sylabs.io/v1/imagefile/library/default/alpine:latest</code></p></li>
+</ul>
+</div>
+<div class="section level3">
+<h3 id="a-note-on-security-and-saftey">A note on security and saftey<a class="anchor" aria-label="anchor" href="#a-note-on-security-and-saftey"></a>
+</h3>
+<p>Only pull from <strong>trusted sources</strong>. Generally sepeaking
+containers provided by trusted orginizations or the developer are ideal
+sources.</p>
+<p>Dockerhub shows how many pulls each container had had as well as
+Dockerhub provided tags: <em>Docker Official Image</em>, <em>Verified
+Publisher</em>, and <em>Sponsored OSS</em></p>
+<p>Lets take look a some dockerhub docker images sources that we will be
+using today.</p>
+<ul>
+<li>staphb<br>
 </li>
 </ul>
-<pre class="library://user/collection/container:tag```"><code>
-- **docker** : Pull a Docker/OCI image from Docker Hub, or another OCI registry. OCI stands for open container registry.  
-```docker://user/image:tag```  
-
-- **shub** : Pull an image from Singularity Hub  
-```shub://user/image:tag```  
-
-- **oras** : Pull a SIF image from an OCI registry that supports ORAS. GCP artifcact registry supports.  
-```oras://registry/namespace/image:tag```  
-
-- **http, https**: Pull an image using the http(s?) protocol  
-```https://library.sylabs.io/v1/imagefile/library/default/alpine:latest```  
-
-
-### A note on security and saftey
-
-Only pull from **trusted sources**. Generally sepeaking containers provided by trusted orginizations or the developer are ideal sources.
-
-Dockerhub shows how many pulls each container had had as well as Dockerhub provided tags: *Docker Official Image*, *Verified Publisher*, and *Sponsored OSS*
-
-Lets take look a some dockerhub docker images sources that we will be using today.  
-
-- staphb  
-```https://hub.docker.com/search?q=staphb&amp;image_filter=open_source```
-
+<pre class="https://hub.docker.com/search?q=staphb&amp;image_filter=open_source```"><code>
 -  biocontainers  
 ```https://hub.docker.com/r/biocontainers/biocontainers```
 
