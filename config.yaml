@@ -60,6 +60,17 @@ contact: 'kurt.showmaker@jax.org' # FIXME
 # Order of episodes in your lesson
 episodes: 
 - 00-introduction.md
+- 01-intro-to-computers.md
+- 02-singularity-commands.md
+- 03-singularity-pull-hello-world.md
+- 04-repos-and-registries.md
+- 05-singularity-build.md
+- 06-bioinformatics-qc.md
+- 07-bioinformatics-bwa.md
+- 08-circos.md
+- 09-singularity-build-blast-example.md
+- 10-singularity_build_rstudio.md
+- 11-singularity-GPU-demo.md
 
 # Information for Learners
 learners: 
