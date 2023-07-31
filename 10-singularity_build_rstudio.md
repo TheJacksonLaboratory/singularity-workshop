@@ -181,38 +181,6 @@ knit_hooks$set(source = function(x, options){
 })
 ```
 
-```{r my-first-chunk, results='asis', verbatim = TRUE} 
-## code goes in here
-```
-
-Inline code is similar, using single backticks instead. Inline code does not have names or options. For example,  `r noquote("\x60r rnorm(10)\x60")`. 
-
-Here's an example of raw output using the `mtcars` dataset:
-
-```{r mtcars-example, verbatim = TRUE}
-lm(mpg ~ hp + wt, data = mtcars)
-```
-
-And here's a plot
-
-```{r mt-plot, verbatim = TRUE}
-library(ggplot2)
-ggplot(mtcars, aes(y = mpg, x = wt, size = hp)) + geom_point() + stat_smooth(method = "lm", se = FALSE)
-```
-
-The concept is very simple. Anything you want to do in `R` is incorporated into your document, the results alongside the code. The important details to learn are methods of controlling the output. This means making nice looking tables, decent figures, and formatting inline results. We will cover these topics next. 
-
-Controlling `R` output
-========================
-
-### Tables
-
-When outputting tables in knitr, it is important to use the option `results = 'asis'`. There are several options for formatting tables in `R`. The `knitr` package includes a function called `kable` that makes basic **k**nitr t**ables**. There are options to control the number of digits, whether row names are included or not, column alignment, and other options that depend on the output type. 
-
-```{r kable, results = 'asis', verbatim = TRUE}
-kable(head(mtcars), digits = 2, align = c(rep("l", 4), rep("c", 4), rep("r", 4)))
-```
-
 ### Citations and more information
 
 Example:  
