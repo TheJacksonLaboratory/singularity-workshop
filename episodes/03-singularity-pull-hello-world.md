@@ -4,7 +4,7 @@ teaching: 30
 exercises: 0
 ---
 
-### The Singularity Pull command 
+### The Singularity Pull command  
 
 The most basic command:  
 ```singularity pull <URL>```
@@ -18,24 +18,24 @@ Example (dont run yet):
 Example making a new name (dont run yet):  
 ```singularity pull awesome_container.sif docker://rocker/tidyverse:4.2.1 ```  
 
-### Tags
+### Tags  
 
-Singularity and docker uses tags, these can be used to access specific versions or distributions of the softwares. 
+Singularity and docker uses tags, these can be used to access specific versions or distributions of the softwares.  
 
 Of note the images and tags can change inside the repo, so for complete repoducibility purposes you may want to retain the software or build from source. 
 
 ### Singularity can pull from 5 types of URIs  
 
-- **library**: Pull an image from the currently configured library. See here for configuring a libary.  
+- **library** : Pull an image from the currently configured library. See here for configuring a libary.  
 ```library://user/collection/container:tag```  
 
-- **docker**: Pull a Docker/OCI image from Docker Hub, or another OCI registry. OCI stands for open container registry.  
+- **docker** : Pull a Docker/OCI image from Docker Hub, or another OCI registry. OCI stands for open container registry.  
 ```docker://user/image:tag```  
 
-- **shub**: Pull an image from Singularity Hub  
+- **shub** : Pull an image from Singularity Hub  
 ```shub://user/image:tag```  
 
-- **oras**: Pull a SIF image from an OCI registry that supports ORAS. GCP artifcact registry supports.  
+- **oras** : Pull a SIF image from an OCI registry that supports ORAS. GCP artifcact registry supports.  
 ```oras://registry/namespace/image:tag```  
 
 - **http, https**: Pull an image using the http(s?) protocol  
