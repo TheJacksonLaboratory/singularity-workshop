@@ -86,4 +86,6 @@ An image with links
 
 ![circos_8_11](episodes/fig/circos_8_11.svg){alt="circos example 8 dot 11"}
 
+### citations
+http://circos.ca/
 

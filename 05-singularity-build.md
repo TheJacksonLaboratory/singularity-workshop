@@ -6,7 +6,7 @@ exercises: 0
 
 ### The build command 
 
-Containers can be build from the same sources as pull command library, docker, shub, oras, http, https as well as using a binary file as a base.
+Containers can be build from the same sources as pull command library, docker, shub, oras as well as using a binary file as a base.
 
 Today we will focus on one of the most common builds, building a ontop container image from docker.
 

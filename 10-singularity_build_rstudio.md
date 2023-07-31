@@ -20,7 +20,7 @@ cd /projects/my-lab/10-build-rstudio
 To start, create a few directories Rstudio server looks for. 
 
 ```bash
-workdir=/home/student
+workdir=/projects/my-lab/10-build-rstudio
 
 mkdir -p -m 700 ${workdir}/run ${workdir}/tmp ${workdir}/var/lib/rstudio-server
 
@@ -65,14 +65,20 @@ View files inside directory. Notice no R directory.
 ```bash
 ls -lah 
 ```
-Lets set the run time variables and deploy.
+
+Set the run time variables and deploy.
 
 ```bash
 export SINGULARITY_BIND="${workdir}/run:/run,${workdir}/tmp:/tmp,${workdir}/database.conf:/etc/rstudio/database.conf,${workdir}/var/lib/rstudio-server:/var/lib/rstudio-server"
 export SINGULARITYENV_USER=$(id -un)
 export SINGULARITYENV_PASSWORD=password
 singularity exec --cleanenv rdeseq2.sif rserver --www-port 8787 --auth-none=0 --auth-pam-helper-path=pam-helper --auth-stay-signed-in-days=30 --auth-timeout-minutes=0 --server-user  "student"
-```
+```  
+
+**navigate to ```<your_IP>:8787```**
+**username is student**
+**password is set above to password**
+
 
 Lets load a package that from the container.
 
@@ -93,12 +99,28 @@ Now we see the local user install.
 .libPaths()
 ```
 
+```output
+[1] "/home/student/R/x86_64-pc-linux-gnu-library/4.2"
+[2] "/usr/local/lib/R/site-library"                  
+[3] "/usr/local/lib/R/library"    
+```
+
+
+
+**Verify the libs with terminal tab**  
+```ls /home/student/R/x86_64-pc-linux-gnu-library/4.2```  
+```ls /usr/local/lib/R```  
+
+**Verify via ssh'ing with another tab**  
+```ssh student@<IP>```  
+```ls /home/student/R/x86_64-pc-linux-gnu-library/4.2```
+```ls /usr/local/lib/R```  
+
 Lets install few fun packages.
 ```R
 install.packages('knitr', dependencies = TRUE)
 ```
 
-Lets install few fun packages.
 ```R
 options(repos = c(
   carpentries = "https://carpentries.r-universe.dev/", 
@@ -107,14 +129,20 @@ options(repos = c(
 install.packages("sandpaper", dep = TRUE)
 ```
 
+**note the sandpaper command will reset the rstudio server.**  
+**select dont save**  
 ```R
 library('sandpaper')
 sandpaper::create_lesson("~/r-intermediate-penguins")
 ```
 
+**after reset we are now in the new folder**
+
 ```R
 sandpaper::serve(quiet = FALSE, host = "0.0.0.0", port = "8789")
 ```
+
+**Now edit one of the episodes**
 
 ```R
  servr::daemon_stop()
@@ -124,10 +152,11 @@ sandpaper::serve(quiet = FALSE, host = "0.0.0.0", port = "8789")
 
 Make new folder called myknit.  
 Make file in folder called myknit.Rmd  
-Copy section of code from the link below and paste into new myknit.Rmd file. 
+Copy section of code (lines 56 to 101) from the link below and paste into new myknit.Rmd file. 
 
  #https://github.com/sachsmc/knit-git-markr-guide/blob/master/knitr/knit.Rmd
 
+**Caution: just an example below, use copy lines from link above**
 
 ```R
  ```{r setup, include=FALSE}
@@ -183,3 +212,16 @@ When outputting tables in knitr, it is important to use the option `results = 'a
 ```{r kable, results = 'asis', verbatim = TRUE}
 kable(head(mtcars), digits = 2, align = c(rep("l", 4), rep("c", 4), rep("r", 4)))
 ```
+
+### Citations and more information
+
+Example:  
+https://rpubs.com/Ilyashaikall/ClusteringofWine
+
+https://rpubs.com/diyasarya/diabet
+
+https://rpubs.com/
+
+https://bookdown.org/yihui/rmarkdown/rmarkdown-site.html
+
+https://github.com/rstudio/rmarkdown-website-examples

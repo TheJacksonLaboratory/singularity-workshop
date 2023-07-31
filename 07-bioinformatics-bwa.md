@@ -84,7 +84,7 @@ total 249052
 
 
 ```bash
-singularity exec -B $PWD bwa.sif bwa mem chr20.fna /projects/my-lab/06-bio-qc/SRR10233452_subset_1.fastq /projects/my-lab/06-bio-qc/SRR10233452_subset_1.fastq/SRR10233452_subset_2.fastq > out_bwa.sam 2> err_out_bwa.sam
+singularity exec -B $PWD bwa.sif bwa mem chr20.fna /projects/my-lab/06-bio-qc/SRR10233452_subset_1.fastq /projects/my-lab/06-bio-qc/SRR10233452_subset_2.fastq > out_bwa.sam 
 ```
 
 We get an error as the container can not see the fastq files in the other directory
@@ -95,15 +95,15 @@ We get an error as the container can not see the fastq files in the other direct
 [E::main_mem] fail to open file `/projects/my-lab/06-bio-qc/SRR10233452_subset_1.fastq'.
 ```
 
-Lets add a bind mount to the command so we can see them.
-Note: The mount location in the container does not need to already exist in the container.
+Lets add a bind mount to the command so we can see them.  
+Note: The mount location in the container does not need to exist in the container.
 
 ```bash
 singularity exec -B /projects/my-lab/06-bio-qc:/projects/my-lab/06-bio-qc -B $PWD bwa.sif bwa mem chr20.fna /projects/my-lab/06-bio-qc/SRR10233452_subset_1.fastq /projects/my-lab/06-bio-qc/SRR10233452_subset_2.fastq > out_bwa.sam 
 ```
 
 ```bash
-head -n 5 out_bwa.sam
+head -n 7 out_bwa.sam
 ```
 
 ### Citations  
