@@ -299,7 +299,6 @@
         </div>
 
         
-
 <div class="section level1">
 <h1 id="disclaimer">Disclaimer<a class="anchor" aria-label="anchor" href="#disclaimer"></a></h1>
 <p>This build of rstudio is for demonstration purposes only on these
@@ -484,35 +483,6 @@ above</strong></p>
 <span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a><span class="st">  }</span></span>
 <span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a><span class="st">})</span></span></code></pre>
 </div>
-<p><code>{r my-first-chunk, results='asis', verbatim = TRUE}  ## code goes in here</code></p>
-<p>Inline code is similar, using single backticks instead. Inline code
-does not have names or options. For example,
-<code>r noquote("\x60r rnorm(10)\x60")</code>.</p>
-<p>Here’s an example of raw output using the <code>mtcars</code>
-dataset:</p>
-<p><code>{r mtcars-example, verbatim = TRUE} lm(mpg ~ hp + wt, data = mtcars)</code></p>
-<p>And here’s a plot</p>
-<p><code>{r mt-plot, verbatim = TRUE} library(ggplot2) ggplot(mtcars, aes(y = mpg, x = wt, size = hp)) + geom_point() + stat_smooth(method = "lm", se = FALSE)</code></p>
-<p>The concept is very simple. Anything you want to do in <code>R</code>
-is incorporated into your document, the results alongside the code. The
-important details to learn are methods of controlling the output. This
-means making nice looking tables, decent figures, and formatting inline
-results. We will cover these topics next.</p>
-</div>
-</div>
-</div>
-<div class="section level1">
-<h1 id="controlling-r-output">Controlling <code>R</code> output<a class="anchor" aria-label="anchor" href="#controlling-r-output"></a></h1>
-<div class="section level3">
-<h3 id="tables">Tables<a class="anchor" aria-label="anchor" href="#tables"></a></h3>
-<p>When outputting tables in knitr, it is important to use the option
-<code>results = 'asis'</code>. There are several options for formatting
-tables in <code>R</code>. The <code>knitr</code> package includes a
-function called <code>kable</code> that makes basic
-<strong>k</strong>nitr t<strong>ables</strong>. There are options to
-control the number of digits, whether row names are included or not,
-column alignment, and other options that depend on the output type.</p>
-<p><code>{r kable, results = 'asis', verbatim = TRUE} kable(head(mtcars), digits = 2, align = c(rep("l", 4), rep("c", 4), rep("r", 4)))</code></p>
 </div>
 <div class="section level3">
 <h3 id="citations-and-more-information">Citations and more information<a class="anchor" aria-label="anchor" href="#citations-and-more-information"></a></h3>
@@ -527,7 +497,7 @@ any links that you are not going to use.
  -->
 </div>
 </div>
-
+</div>
 
 
       </div> <!-- / div.lesson-content -->
