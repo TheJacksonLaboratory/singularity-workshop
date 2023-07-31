@@ -61,7 +61,7 @@ singularity exec -B $PWD circos_latest.sif /opt/circos/bin/circos -conf circos-t
 
 The base image of the human chromosomes was created
 
-![circos_1_1](episodes/fig/circos_1_1.svg alt="circos example 1 dot 1")
+![circos_1_1](episodes/fig/circos_1_1.svg){alt="circos example 1 dot 1"}
 
 
 Run tutorial 8/6 histograms 
@@ -73,7 +73,7 @@ singularity exec -B $PWD circos_latest.sif /opt/circos/bin/circos -conf circos-t
 
 An image with histograms
 
-![circos_8_6](episodes/fig/circos_8_6.svg alt="circos example 8 dot 6")
+![circos_8_6](episodes/fig/circos_8_6.svg){alt="circos example 8 dot 6"}
 
 Run tutorial 8/11 links
 
@@ -84,6 +84,6 @@ singularity exec -B $PWD circos_latest.sif /opt/circos/bin/circos -conf circos-t
 
 An image with links
 
-![circos_8_11](episodes/fig/circos_8_11.svg alt="circos example 8 dot 11")
+![circos_8_11](episodes/fig/circos_8_11.svg){alt="circos example 8 dot 11"}
 
 
