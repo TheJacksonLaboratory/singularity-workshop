@@ -67,7 +67,7 @@ sudo singularity build blast.sif blast.def
 Ok, let’s test that our container is built properly.  
 
 ```bash
-./BLAST.sif
+./blast.sif
 ```
 
 ```output
@@ -77,7 +77,7 @@ Hello from BLAST!
 Ok, now we can go into the container’s environment to verify things using the singularity shell command.
 
 ```bash
-singularity shell BLAST.sif
+singularity shell blast.sif
 ```
 
 Notice the change in prompt from “$” to ”Apptainer>”, this is because we are inside the container.
@@ -265,7 +265,7 @@ This pulls the first 10 protein sequences listed in the human chromosome 1 file 
 Here We will run blast program using our input and constructed blast database.
 
 ```bash
-time singularity exec -B $PWD BLAST.sif blastp -num_threads 2 -db c_elegans -query search_query.fasta -outfmt 6 -out BLASTP_Results.txt -max_target_seqs 1
+time singularity exec -B $PWD blast.sif blastp -num_threads 2 -db c_elegans -query search_query.fasta -outfmt 6 -out BLASTP_Results.txt -max_target_seqs 1
 ```
 
 This gives us the following output:

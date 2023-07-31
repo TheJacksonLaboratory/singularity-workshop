@@ -74,9 +74,11 @@ Lets look at the busco pull command from earlier, dont execute it.
 docker pull ezlabgva/busco:v5.4.7_cv1
 ```
 
-Modify for singularity and pull it down. 
+Modify for singularity and pull it down.  
 Maybe put docker, colon, forward slash,forward slash to a jingle as we will be using it often.  
+
 ```docker://```  
+
 ```bash
 singularity pull docker://ezlabgva/busco:v5.4.7_cv1
 ```
@@ -147,14 +149,6 @@ singularity exec --bind $PWD ./busco_v5.4.7_cv1.sif busco -i GCF_000013425.1_ASM
 singularity exec --bind $PWD ./busco_v5.4.7_cv1.sif busco -i GCF_003264815.1_ASM326481v1_protein.faa -l bacteria_odb10 -o  busco_out_GCF_003264815 -m protein 
 ```
 
-```bash
-singularity exec --pwd / -e  busco_v5.4.7_cv1.sif busco -i GCF_000013425.1_ASM1342v1_protein.faa -l bacteria_odb10 -o  busco_out_GCF_000013425 -m  protein 
-```
-
-```bash
-busco -i ./GCF_003264815.1_ASM326481v1_genomic.fna -l bacteria_odb10 -o ./busco_out_GCF_003264815 -m genome
-```
-
 Now lets download some more tools.
 What was that jingle again ...  
 
@@ -163,7 +157,7 @@ singularity pull docker://staphb/bwa:0.7.17
 singularity pull docker://staphb/samtools:1.17-2023-06
 singularity pull docker://staphb/bedtools:2.31.0
 singularity pull docker://staphb/blast:2.14.0
-singularity pull docker://staphb/bcftools
+singularity pull docker://staphb/bcftools:1.17
 singularity pull docker://staphb/ncbi-datasets
 singularity pull docker://biocontainers/vcftools:v0.1.16-1-deb_cv1
 singularity pull docker://biocontainers/bedops:v2.4.35dfsg-1-deb_cv1
@@ -178,22 +172,22 @@ Thats alot of software ready to go.
 We see a wide range in sizes for the various software.
 
 ```output
--rwxrwxr-x 1 student student 119M Jul 31 03:52 bcftools_latest.sif
--rwxrwxr-x 1 student student  59M Jul 31 04:35 bedops_v2.4.35dfsg-1-deb_cv1.sif
--rwxrwxr-x 1 student student  44M Jul 31 03:51 bedtools_2.31.0.sif
--rwxrwxr-x 1 student student 265M Jul 31 03:51 blast_2.14.0.sif
--rwxrwxr-x 1 student student 785M Jul 31 03:36 busco_v5.4.7_cv1.sif
--rwxrwxr-x 1 student student  76M Jul 31 03:51 bwa_0.7.17.sif
--rwxrwxr-x 1 student student  43M Jul 31 03:52 ncbi-datasets_latest.sif
--rwxrwxr-x 1 student student  44M Jul 31 03:51 samtools_1.17-2023-06.sif
--rwxrwxr-x 1 student student  61M Jul 31 03:52 vcftools_v0.1.16-1-deb_cv1.sif
+-rwxrwxr-x 1 student student 119M Jul 31 07:53 bcftools_1.17.sif
+-rwxrwxr-x 1 student student  59M Jul 31 07:53 bedops_v2.4.35dfsg-1-deb_cv1.sif
+-rwxrwxr-x 1 student student  44M Jul 31 07:52 bedtools_2.31.0.sif
+-rwxrwxr-x 1 student student 265M Jul 31 07:53 blast_2.14.0.sif
+-rwxrwxr-x 1 student student 785M Jul 31 07:48 busco_v5.4.7_cv1.sif
+-rwxrwxr-x 1 student student  76M Jul 31 07:52 bwa_0.7.17.sif
+-rwxrwxr-x 1 student student  43M Jul 31 07:53 ncbi-datasets_latest.sif
+-rwxrwxr-x 1 student student  44M Jul 31 07:52 samtools_1.17-2023-06.sif
+-rwxrwxr-x 1 student student  61M Jul 31 07:53 vcftools_v0.1.16-1-deb_cv1.sif
 ```
 
 Lets see what they used for the base images. 
 
 
 ```bash
-singularity exec bcftools_latest.sif grep -E '^(VERSION|NAME)=' /etc/os-release
+singularity exec bcftools_1.17.sif grep -E '^(VERSION|NAME)=' /etc/os-release
 singularity exec bedops_v2.4.35dfsg-1-deb_cv1.sif grep -E '^(VERSION|NAME)=' /etc/os-release
 singularity exec bedtools_2.31.0.sif grep -E '^(VERSION|NAME)=' /etc/os-release
 singularity exec blast_2.14.0.sif grep -E '^(VERSION|NAME)=' /etc/os-release
@@ -207,32 +201,39 @@ singularity exec vcftools_v0.1.16-1-deb_cv1.sif grep -E '^(VERSION|NAME)=' /etc/
 We see several different Ubuntu release and on Debian.
 
 ```output
+[student@edu-vm-bdafb86b-1 04-pull]$ singularity exec bcftools_1.17.sif grep -E '^(VERSION|NAME)=' /etc/os-release
 INFO:    underlay of /etc/localtime required more than 50 (75) bind mounts
 NAME="Ubuntu"
 VERSION="20.04.5 LTS (Focal Fossa)"
-[student@edu-vm-228750a1-1 04-pull]$ singularity exec bedtools_2.31.0.sif grep -E '^(VERSION|NAME)=' /etc/os-release
+[student@edu-vm-bdafb86b-1 04-pull]$ singularity exec bedops_v2.4.35dfsg-1-deb_cv1.sif grep -E '^(VERSION|NAME)=' /etc/os-release
+NAME="Debian GNU/Linux"
+VERSION="10 (buster)"
+[student@edu-vm-bdafb86b-1 04-pull]$ singularity exec bedtools_2.31.0.sif grep -E '^(VERSION|NAME)=' /etc/os-release
 INFO:    underlay of /etc/localtime required more than 50 (69) bind mounts
 NAME="Ubuntu"
 VERSION="22.04.2 LTS (Jammy Jellyfish)"
-[student@edu-vm-228750a1-1 04-pull]$ singularity exec blast_2.14.0.sif grep -E '^(VERSION|NAME)=' /etc/os-release
+[student@edu-vm-bdafb86b-1 04-pull]$ singularity exec blast_2.14.0.sif grep -E '^(VERSION|NAME)=' /etc/os-release
 INFO:    underlay of /etc/localtime required more than 50 (71) bind mounts
 NAME="Ubuntu"
 VERSION="20.04.6 LTS (Focal Fossa)"
-[student@edu-vm-228750a1-1 04-pull]$ singularity exec busco_v5.4.7_cv1.sif grep -E '^(VERSION|NAME)=' /etc/os-release
+[student@edu-vm-bdafb86b-1 04-pull]$ singularity exec busco_v5.4.7_cv1.sif grep -E '^(VERSION|NAME)=' /etc/os-release
 NAME="Debian GNU/Linux"
 VERSION="10 (buster)"
-[student@edu-vm-228750a1-1 04-pull]$ singularity exec bwa_0.7.17.sif grep -E '^(VERSION|NAME)=' /etc/os-release
+[student@edu-vm-bdafb86b-1 04-pull]$ singularity exec bwa_0.7.17.sif grep -E '^(VERSION|NAME)=' /etc/os-release
 NAME="Ubuntu"
 VERSION="16.04.7 LTS (Xenial Xerus)"
-[student@edu-vm-228750a1-1 04-pull]$ singularity exec ncbi-datasets_latest.sif grep -E '^(VERSION|NAME)=' /etc/os-release
+[student@edu-vm-bdafb86b-1 04-pull]$ singularity exec ncbi-datasets_latest.sif grep -E '^(VERSION|NAME)=' /etc/os-release
 INFO:    underlay of /etc/localtime required more than 50 (73) bind mounts
 NAME="Ubuntu"
 VERSION="22.04.2 LTS (Jammy Jellyfish)"
-[student@edu-vm-228750a1-1 04-pull]$ singularity exec samtools_1.17-2023-06.sif grep -E '^(VERSION|NAME)=' /etc/os-release
+[student@edu-vm-bdafb86b-1 04-pull]$ singularity exec samtools_1.17-2023-06.sif grep -E '^(VERSION|NAME)=' /etc/os-release
 INFO:    underlay of /etc/localtime required more than 50 (70) bind mounts
 NAME="Ubuntu"
 VERSION="22.04.2 LTS (Jammy Jellyfish)"
-[student@edu-vm-228750a1-1 04-pull]$ singularity exec vcftools_v0.1.16-1-deb_cv1.sif grep -E '^(VERSION|NAME)=' /etc/os-release
+[student@edu-vm-bdafb86b-1 04-pull]$ singularity exec vcftools_v0.1.16-1-deb_cv1.sif grep -E '^(VERSION|NAME)=' /etc/os-release
+NAME="Debian GNU/Linux"
+VERSION="10 (buster)"
+
 ```
 
 
@@ -273,6 +274,45 @@ We can now see the *.fai* files have been added.
 ```bash
 ls -lah  ncbi_dataset/data/GCF_001719145.1
 ```
+
+```bash
+head ncbi_dataset/data/GCF_001719145.1/protein.faa.fai
+```
+
+```output
+WP_002802878.1  86      100     80      81
+WP_002804494.1  76      255     76      77
+WP_002804983.1  90      418     80      81
+WP_002805908.1  46      580     46      47
+WP_002806026.1  208     728     80      81
+WP_002806565.1  121     1002    80      81
+WP_002808218.1  128     1212    80      81
+WP_002808376.1  71      1409    71      72
+WP_002808458.1  227     1565    80      81
+WP_002808480.1  112     1870    80      81
+```
+
+```bash
+sort -nk 2 ncbi_dataset/data/GCF_001719145.1/protein.faa.fai | tail
+```
+
+```output
+WP_069288208.1  1504    1554134 80      81
+WP_005917363.1  1669    1264083 80      81
+WP_033837051.1  1746    1522853 80      81
+WP_033481971.1  1871    1504684 80      81
+WP_269466082.1  2264    1673627 80      81
+WP_033837667.1  2375    1534966 80      81
+WP_033837612.1  2416    1528386 80      81
+WP_033837670.1  2756    1537448 80      81
+WP_005916482.1  2982    1177517 80      81
+WP_005916057.1  3397    1136201 80      81
+```
+
+```bash
+singularity exec -B $PWD samtools_1.17-2023-06.sif samtools faidx  ncbi_dataset/data/GCF_001719145.1/protein.faa WP_005916057.1 
+```
+
 
 ```bash
 singularity exec -B $PWD samtools_1.17-2023-06.sif samtools faidx  ncbi_dataset/data/GCF_001719145.1/protein.faa WP_005916057.1 > longest_prot.fasta

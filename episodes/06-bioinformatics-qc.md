@@ -102,7 +102,28 @@ fastqc.sif  SRR10233452_subset_1.fastq.gz  SRR10233452_subset_1.fastq.gz.md5  SR
 singularity exec fastqc.sif fastqc SRR10233452_subset_1.fastq.gz SRR10233452_subset_2.fastq.gz
 ```
 
+```output
+INFO:    underlay of /etc/localtime required more than 50 (81) bind mounts
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+        LANGUAGE = (unset),
+        LC_ALL = (unset),
+        LANG = "en_US.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the standard locale ("C").
+Skipping 'SRR10233452_subset_1.fastq.gz' which didn't exist, or couldn't be read
+Skipping 'SRR10233452_subset_2.fastq.gz' which didn't exist, or couldn't be read
+```
 
+Oh no we dont see the files, again.  
+We can fix that.  
+
+
+```bash
+singularity exec -B $PWD fastqc.sif fastqc SRR10233452_subset_1.fastq.gz SRR10233452_subset_2.fastq.gz
+```
+
+Worked great.  
 
 ```output
 perl: warning: Setting locale failed.
@@ -120,12 +141,10 @@ Approx 100% complete for SRR10233452_subset_2.fastq.gz
 Analysis complete for SRR10233452_subset_2.fastq.gz
 ```
 
-
-
 ###  Use ls with the 1 flag to see the files in the directory
 
 ```bash
-$ ls -1
+ls -1
 ```
 
 
@@ -149,7 +168,7 @@ SRR10233452_subset_2.fastq.md5
 ###  Use *unzip* to unzip the results for subset 1.
 
 ```bash
-$ unzip SRR10233452_subset_1_fastqc.zip
+unzip SRR10233452_subset_1_fastqc.zip
 ```
 
 
@@ -239,7 +258,7 @@ ls -lF
 ```
 
 
-#### Results can be downloaded from link below if you do not have SFTP  
+#### Try downloading the zip files with **scp**  
 
-KURT ADD LINKS TO FILES.....
+
 
