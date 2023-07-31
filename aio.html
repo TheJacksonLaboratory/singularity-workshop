@@ -2352,75 +2352,95 @@ the container.</p>
 </div>
 <p>Lets load a package that from the container.</p>
 <div class="codewrapper sourceCode" id="cb8">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">library</span><span class="er">(</span><span class="st">'DESeq2'</span><span class="kw">)</span></span></code></pre>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw">library</span><span class="op">(</span><span class="st">'DESeq2'</span><span class="op">)</span></span></code></pre>
 </div>
 <p>Using the Rstudio file browser look at the R folder that appeared,
 but nothing is in it.</p>
 <p>Lets install something to the user space.</p>
 <div class="codewrapper sourceCode" id="cb9">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">BiocManager::install</span><span class="er">(</span><span class="st">"EnhancedVolcano"</span><span class="kw">)</span></span></code></pre>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">BiocManager</span><span class="fu">::</span><span class="fu">install</span><span class="op">(</span><span class="st">"EnhancedVolcano"</span><span class="op">)</span></span></code></pre>
 </div>
 <p>Now we see the local user install.</p>
-<p>Lets install few fun packages.</p>
 <div class="codewrapper sourceCode" id="cb10">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">install.packages</span><span class="er">(</span><span class="st">'knitr'</span><span class="ex">,</span> dependencies = TRUE<span class="kw">)</span></span></code></pre>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">.libPaths</span><span class="op">(</span><span class="op">)</span></span></code></pre>
 </div>
 <p>Lets install few fun packages.</p>
 <div class="codewrapper sourceCode" id="cb11">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">options</span><span class="er">(</span><span class="ex">repos</span> = c<span class="er">(</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="ex">carpentries</span> = <span class="st">"https://carpentries.r-universe.dev/"</span>, </span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="ex">CRAN</span> = <span class="st">"https://cran.rstudio.com/"</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="kw">))</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="ex">install.packages</span><span class="er">(</span><span class="st">"sandpaper"</span><span class="ex">,</span> dep = TRUE<span class="kw">)</span></span></code></pre>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">install.packages</span><span class="op">(</span><span class="st">'knitr'</span>, dependencies <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre>
 </div>
+<p>Lets install few fun packages.</p>
 <div class="codewrapper sourceCode" id="cb12">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">library</span><span class="er">(</span><span class="st">'sandpaper'</span><span class="kw">)</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="ex">sandpaper::create_lesson</span><span class="er">(</span><span class="st">"~/r-intermediate-penguins"</span><span class="kw">)</span></span></code></pre>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">options</span><span class="op">(</span>repos <span class="op">=</span> <span class="fu">c</span><span class="op">(</span></span>
+<span>  carpentries <span class="op">=</span> <span class="st">"https://carpentries.r-universe.dev/"</span>, </span>
+<span>  CRAN <span class="op">=</span> <span class="st">"https://cran.rstudio.com/"</span></span>
+<span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="fu">install.packages</span><span class="op">(</span><span class="st">"sandpaper"</span>, dep <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper sourceCode" id="cb13">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sandpaper::serve</span><span class="er">(</span><span class="ex">quiet</span> = FALSE, host = <span class="st">"0.0.0.0"</span>, port = <span class="st">"8789"</span><span class="kw">)</span></span></code></pre>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw">library</span><span class="op">(</span><span class="st">'sandpaper'</span><span class="op">)</span></span>
+<span><span class="fu">sandpaper</span><span class="fu">::</span><span class="fu">create_lesson</span><span class="op">(</span><span class="st">"~/r-intermediate-penguins"</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper sourceCode" id="cb14">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a> <span class="fu">servr::daemon_stop()</span></span></code></pre>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">sandpaper</span><span class="fu">::</span><span class="fu">serve</span><span class="op">(</span>quiet <span class="op">=</span> <span class="cn">FALSE</span>, host <span class="op">=</span> <span class="st">"0.0.0.0"</span>, port <span class="op">=</span> <span class="st">"8789"</span><span class="op">)</span></span></code></pre>
 </div>
-<p>#<a href="https://github.com/sachsmc/knit-git-markr-guide/blob/master/knitr/knit.Rmd" class="external-link uri">https://github.com/sachsmc/knit-git-markr-guide/blob/master/knitr/knit.Rmd</a></p>
 <div class="codewrapper sourceCode" id="cb15">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a> <span class="kw">```</span><span class="ex">{r</span> setup, include=FALSE}</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="ex">library</span><span class="er">(</span><span class="ex">stringr</span><span class="kw">)</span></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="ex">library</span><span class="er">(</span><span class="ex">knitr</span><span class="kw">)</span></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="ex">opts_chunk</span><span class="va">$set</span><span class="er">(</span><span class="ex">tidy</span> = FALSE<span class="kw">)</span></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="ex">knit_hooks</span><span class="va">$set</span><span class="er">(</span><span class="bu">source</span> = function<span class="er">(</span><span class="ex">x,</span> options<span class="kw">){</span></span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> <span class="kw">(</span><span class="ex">!is.null</span><span class="er">(</span><span class="ex">options</span><span class="va">$verbatim</span><span class="kw">)</span> <span class="kw">&amp;&amp;</span> <span class="ex">options</span><span class="va">$verbatim</span><span class="kw">){</span></span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>    <span class="ex">opts</span> = gsub<span class="er">(</span><span class="st">",</span><span class="dt">\\</span><span class="st">s*verbatim</span><span class="dt">\\</span><span class="st">s*=</span><span class="dt">\\</span><span class="st">s*TRUE</span><span class="dt">\\</span><span class="st">s*"</span><span class="ex">,</span> <span class="st">""</span>, options<span class="va">$params</span>.src<span class="kw">)</span></span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>    <span class="ex">bef</span> = sprintf<span class="er">(</span><span class="st">'\n\n    ```{r %s}\n'</span><span class="ex">,</span> opts, <span class="st">"\n"</span><span class="kw">)</span></span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>    <span class="ex">stringr::str_c</span><span class="er">(</span></span>
-<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>      <span class="ex">bef,</span> </span>
-<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>      <span class="ex">knitr:::indent_block</span><span class="er">(</span><span class="fu">paste</span><span class="er">(</span><span class="ex">x,</span> collapse = <span class="st">'\n'</span><span class="kw">)</span><span class="ex">,</span> <span class="st">"    "</span><span class="kw">)</span><span class="ex">,</span> </span>
-<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>      <span class="st">"\n    </span><span class="kw">```</span><span class="ex">\n</span><span class="st">"</span></span>
-<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a><span class="st">    )</span></span>
-<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a><span class="st">  } else {</span></span>
-<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a><span class="st">    stringr::str_c("</span><span class="ex">\n\n</span><span class="kw">```</span><span class="st">"</span><span class="ex">,</span> tolower<span class="er">(</span><span class="ex">options</span><span class="va">$engine</span><span class="kw">)</span><span class="ex">,</span> <span class="st">"\n"</span>, </span>
-<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>      <span class="fu">paste</span><span class="er">(</span><span class="ex">x,</span> collapse = <span class="st">'\n'</span><span class="kw">)</span><span class="ex">,</span> <span class="st">"\n</span><span class="kw">```</span><span class="ex">\n\n</span><span class="st">"</span></span>
-<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a><span class="st">    )</span></span>
-<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a><span class="st">  }</span></span>
-<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a><span class="st">})</span></span></code></pre>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span> <span class="fu">servr</span><span class="fu">::</span><span class="fu">daemon_stop</span><span class="op">(</span><span class="op">)</span></span></code></pre>
+</div>
+<div class="section level3">
+<h3 id="knit-example">Knit example<a class="anchor" aria-label="anchor" href="#knit-example"></a>
+</h3>
+<p>Make new folder called myknit.<br>
+Make file in folder called myknit.Rmd<br>
+Copy section of code from the link below and paste into new myknit.Rmd
+file.</p>
+<p>#<a href="https://github.com/sachsmc/knit-git-markr-guide/blob/master/knitr/knit.Rmd" class="external-link uri">https://github.com/sachsmc/knit-git-markr-guide/blob/master/knitr/knit.Rmd</a></p>
+<div class="codewrapper sourceCode" id="cb16">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a> <span class="st">```</span><span class="at">{r setup, include=FALSE}</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="at">library(stringr)</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="at">library(knitr)</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="at">opts_chunk$set(tidy = FALSE)</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="at">knit_hooks$set(source = function(x, options){</span></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="at">  if (!is.null(options$verbatim) &amp;&amp; options$verbatim){</span></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="at">    opts = gsub(",</span><span class="sc">\\</span><span class="at">s*verbatim</span><span class="sc">\\</span><span class="at">s*=</span><span class="sc">\\</span><span class="at">s*TRUE</span><span class="sc">\\</span><span class="at">s*", "", options$params.src)</span></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="at">    bef = sprintf('</span><span class="sc">\n\n</span><span class="at">    </span><span class="st">```</span>{r %s}\n<span class="st">', opts, "</span><span class="sc">\n</span><span class="st">")</span></span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a><span class="st">    stringr::str_c(</span></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a><span class="st">      bef, </span></span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a><span class="st">      knitr:::indent_block(paste(x, collapse = '</span>\n<span class="st">'), "    "), </span></span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a><span class="st">      "</span><span class="sc">\n</span><span class="st">    ```</span><span class="sc">\n</span><span class="st">"</span></span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a><span class="st">    )</span></span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a><span class="st">  } else {</span></span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a><span class="st">    stringr::str_c("</span><span class="sc">\n\n</span><span class="st">```", tolower(options$engine), "</span><span class="sc">\n</span><span class="st">", </span></span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a><span class="st">      paste(x, collapse = '</span>\n<span class="st">'), "</span><span class="sc">\n</span><span class="st">```</span><span class="sc">\n\n</span><span class="st">"</span></span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a><span class="st">    )</span></span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a><span class="st">  }</span></span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a><span class="st">})</span></span></code></pre>
 </div>
 <p><code>{r my-first-chunk, results='asis', verbatim = TRUE}  ## code goes in here</code></p>
 <p>Inline code is similar, using single backticks instead. Inline code
@@ -2436,6 +2456,7 @@ is incorporated into your document, the results alongside the code. The
 important details to learn are methods of controlling the output. This
 means making nice looking tables, decent figures, and formatting inline
 results. We will cover these topics next.</p>
+</div>
 </div>
 </div>
 <div class="section level1">
