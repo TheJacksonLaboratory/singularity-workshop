@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://TheJacksonLaboratory.github.io/singularity-workshop/00-introduction.html</loc>
+  </url>
+  <url>
     <loc>https://TheJacksonLaboratory.github.io/singularity-workshop/01-introduction.html</loc>
   </url>
   <url>
@@ -20,6 +23,9 @@
   </url>
   <url>
     <loc>https://TheJacksonLaboratory.github.io/singularity-workshop/index.html</loc>
+  </url>
+  <url>
+    <loc>https://TheJacksonLaboratory.github.io/singularity-workshop/instructor/00-introduction.html</loc>
   </url>
   <url>
     <loc>https://TheJacksonLaboratory.github.io/singularity-workshop/instructor/01-introduction.html</loc>
