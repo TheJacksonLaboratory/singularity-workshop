@@ -368,14 +368,14 @@
 <p>By the end of this workshop you will have:</p>
 <ul>
 <li><p>Created 16 contianers.</p></li>
-<li><p>Executed X commands with containers.</p></li>
+<li><p>Executed 12+ commands with containers.</p></li>
 <li><p>Build 2 custom containers.</p></li>
-<li><p>Build 2 websites and viewed them with contianers.</p></li>
+<li><p>Build 2 websites and viewed them with containers.</p></li>
 <li><p>Run the most common singularity commands (pull, build,
 exec)</p></li>
 <li><p>Run the exec command command with bind mounts to access
 data.</p></li>
-<li><p>Encounter X gotchas and discuss solutions to deal with
+<li><p>Encounter 3 gotchas and discuss solutions to deal with
 them.</p></li>
 <li><p>Gotcha 1: Repositories are managed by other users.</p></li>
 <li><p>Solution 1: Keep good documentiaton on how your software was
@@ -487,9 +487,9 @@ useful for conducting certain mathematical calculations.</p></li>
 </section><section id="introduction-to-os-virtual-machines-and-containers"><h2 class="section-heading">Introduction to OS, Virtual Machines and Containers<a class="anchor" aria-label="anchor" href="#introduction-to-os-virtual-machines-and-containers"></a>
 </h2>
 <hr class="half-width">
-<p>Why can’t I use Docker? Docker images are not secure becuase they
+<p>Why can’t I use Docker? Docker images are not secure because they
 allow users to gain root access to the compute nodes. Singularity
-effectively runs as the user running the command, and does not result in
+effectively runs as the user running the command and does not result in
 elevated access. Also, docker interacts with the slurm job scheduler in
 a way that causes resource requests and usages to not match up, making
 it difficult to keep job queueing fair for all users. In that the
@@ -534,7 +534,7 @@ any links that you are not going to use.
 <p><strong>These hands on tutorial are being conducted on a base Centos7
 OS VM with the following programs installed.</strong></p>
 <ul>
-<li><p>apptainer (incuding the alias singularity)</p></li>
+<li><p>apptainer (including the alias singularity)</p></li>
 <li><p>nano</p></li>
 <li><p>wget</p></li>
 <li><p>unzip</p></li>
@@ -683,7 +683,7 @@ INFO:    Creating SIF file...</code></pre>
 </div>
 <p>Note when pulling the image it downloads each layer, storing them in
 the <strong>cache</strong> and stiches them together in the singularity
-image file. The singularity image is imutable.</p>
+image file. The singularity image is immutable.</p>
 </div>
 <div class="section level3">
 <h3 id="use-ls-to-view-the-new-file">Use ls to view the new file<a class="anchor" aria-label="anchor" href="#use-ls-to-view-the-new-file"></a>
@@ -930,7 +930,7 @@ drwx------ 3 student student        19 Jul 31 02:43 .local/
 <p>We get an error because the container can not see the directory. By
 default the container only mounts the <em>home</em> and current
 <em>working</em> directory. If you need to access something outside
-these directories youll need to use a bind mount (more on this
+these directories you’ll need to use a bind mount (more on this
 later).</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -978,7 +978,7 @@ org.opencontainers.image.title: rocker/tidyverse
 org.opencontainers.image.vendor: Rocker Project
 org.opencontainers.image.version: R-4.2.1</code></pre>
 </div>
-<p>The Rocker github provided alot of detail about the builds.</p>
+<p>The Rocker github provided a lot of detail about the builds.</p>
 </div>
 <div class="section level3">
 <h3 id="citations-and-notes">Citations and Notes<a class="anchor" aria-label="anchor" href="#citations-and-notes"></a>
@@ -1012,12 +1012,12 @@ today.</p></li>
 <h3 id="review-the-remote-builder-directions">Review the remote builder directions<a class="anchor" aria-label="anchor" href="#review-the-remote-builder-directions"></a>
 </h3>
 <p>We will omit Sylabs remote builder and repositories in this tutorial
-since it requieres an external account creation.</p>
+since it requiress an external account creation.</p>
 <p>A cloud instance with a few programs (apptainer, nano, wget,
 unzip,nvidia-smi) are a good alternative to remote builders.</p>
 <p><a href="https://docs.sylabs.io/guides/3.2/user-guide/cloud_library.html" class="external-link uri">https://docs.sylabs.io/guides/3.2/user-guide/cloud_library.html</a></p>
 <p>Sylabs also have several YouTube Videos on using Singularity:</p>
-<p>The 5 part Singularity Conatainer Workflow Demo is a good place to
+<p>The 5 part Singularity Container Workflow Demo is a good place to
 start.</p>
 <p>Part 1:<br><a href="https://www.youtube.com/watch?v=nQTMJ9hqKNI&amp;list=PL052H4iYGzyvdZ8VS-omTzj1FKMjdXzfB&amp;index=1" class="external-link uri">https://www.youtube.com/watch?v=nQTMJ9hqKNI&amp;list=PL052H4iYGzyvdZ8VS-omTzj1FKMjdXzfB&amp;index=1</a><br>
 Part 2:<br><a href="https://www.youtube.com/watch?v=23KOlEouAiI&amp;list=PL052H4iYGzyvdZ8VS-omTzj1FKMjdXzfB&amp;index=2" class="external-link uri">https://www.youtube.com/watch?v=23KOlEouAiI&amp;list=PL052H4iYGzyvdZ8VS-omTzj1FKMjdXzfB&amp;index=2</a><br>
@@ -1099,7 +1099,7 @@ Storing signatures
 2023/07/31 03:16:31  info unpack layer: sha256:3b07ee5f9c539bdb444c78a97e1578d7c10b0dc1a8f9b6c89de29ff1d367bdb4
 INFO:    Creating SIF file...</code></pre>
 </div>
-<p>Lets see what happend.</p>
+<p>Lets see what happened.</p>
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1250,7 +1250,7 @@ and more for this accession.</p>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-lah</span>  ncbi_dataset/data/<span class="pp">*</span></span></code></pre>
 </div>
 <p>Lets run some of the bioinformatic tools.</p>
-<p>Index the genome, tanscriptome, and proteome cause why not.</p>
+<p>Index the genome, transcriptome, and proteome cause why not.</p>
 <div class="codewrapper sourceCode" id="cb21">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1374,10 +1374,10 @@ any links that you are not going to use.
 <p>Containers can be build from the same sources as pull command
 library, docker, shub, oras as well as using a binary file as a
 base.</p>
-<p>Today we will focus on one of the most common builds, building a
-ontop container image from docker.</p>
+<p>Today we will focus on one of the most common builds, building on top
+a container image from docker.</p>
 <p>Builds that do not modify the source image generally can be built
-with out sudo privlages, this is equivelent to a pull command.</p>
+with out sudo privileges, this is equivalent to a pull command.</p>
 </div>
 <div class="section level3">
 <h3 id="take-away-parts-of-a-the-build-command-and-definition-file">Take away parts of a the build command and definition file<br><a class="anchor" aria-label="anchor" href="#take-away-parts-of-a-the-build-command-and-definition-file"></a>
@@ -1490,7 +1490,7 @@ any links that you are not going to use.
 </h3>
 </div>
 <div class="section level3">
-<h3 id="first-lests-check-our-data-files">First lests check our data files<a class="anchor" aria-label="anchor" href="#first-lests-check-our-data-files"></a>
+<h3 id="first-lets-check-our-data-files">First lets check our data files<a class="anchor" aria-label="anchor" href="#first-lets-check-our-data-files"></a>
 </h3>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1710,7 +1710,7 @@ PASS	Adapter Content	SRR10233452_subset_1.fastq.gz
 <h3 id="prep-for-bwa">Prep for BWA<a class="anchor" aria-label="anchor" href="#prep-for-bwa"></a>
 </h3>
 <p>Now we can uncompress the ‘gzipped’ files with gunzip. Use the ‘-c
-option to preserve the origional file’</p>
+option to preserve the original file’</p>
 <div class="codewrapper sourceCode" id="cb23">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1890,7 +1890,7 @@ any links that you are not going to use.
 <div class="section level3">
 <h3 id="example-for-circos">Example for circos<a class="anchor" aria-label="anchor" href="#example-for-circos"></a>
 </h3>
-<p>Make a directroy called circos in your home directory</p>
+<p>Change directory into the circos directory.</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>

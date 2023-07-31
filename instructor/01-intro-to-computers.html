@@ -374,9 +374,9 @@ useful for conducting certain mathematical calculations.</p></li>
 <hr class="half-width"><p>A port is a communication endpoint.</p>
 </section><section id="introduction-to-os-virtual-machines-and-containers"><h2 class="section-heading">Introduction to OS, Virtual Machines and Containers<a class="anchor" aria-label="anchor" href="#introduction-to-os-virtual-machines-and-containers"></a>
 </h2>
-<hr class="half-width"><p>Why can’t I use Docker? Docker images are not secure becuase they
+<hr class="half-width"><p>Why can’t I use Docker? Docker images are not secure because they
 allow users to gain root access to the compute nodes. Singularity
-effectively runs as the user running the command, and does not result in
+effectively runs as the user running the command and does not result in
 elevated access. Also, docker interacts with the slurm job scheduler in
 a way that causes resource requests and usages to not match up, making
 it difficult to keep job queueing fair for all users. In that the
