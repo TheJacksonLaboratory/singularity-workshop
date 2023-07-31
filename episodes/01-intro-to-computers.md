@@ -30,6 +30,7 @@ exercises: 0
 
 ## Computer Ports 
 
+A port is a communication endpoint.
 
 ## Introduction to OS, Virtual Machines and Containers
 
