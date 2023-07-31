@@ -2,31 +2,26 @@
 title: Setup
 ---
 
-FIXME: Setup instructions live in this document. Please specify the tools and
-the data sets the Learner needs to have installed.
 
 ## Data Sets
 
-<!--
-FIXME: place any data you want learners to use in `episodes/data` and then use
-       a relative link ( [data zip file](data/lesson-data.zip) ) to provide a
-       link to it, replacing the example.com link.
--->
 
-Example data include chromosome 20 from the rat genome, a subset of 1000 short reads from Bioproject PRJNA574594 SRR10233452, DeepWeeds data set from AlexOlsen.
+Example data include in analyses include:
 
-The bacteria genome X .
+- 3 bacteria genomes including 2 Staphylococcus aureus genomes (GCF_000013425, GCF_003264815) and 1 Xanthomonas genome GCF_001719145.
 
-Links
+- a subset of 1000 short DNA reads from rat (bioproject PRJNA574594 SRR10233452).
 
-https://github.com/AlexOlsen/DeepWeeds
+- chromosome 20 from the rat genome.
 
-### Discussion OS systems for attendees
+- The *C. elegans* proteome
 
+- Human proteins transcribed and translated from chromome 1.
+
+### OS systems for attendees
 
 
 ### Distribute IP address and passwords
-
 
 
 ### Accessing the system through ssh
